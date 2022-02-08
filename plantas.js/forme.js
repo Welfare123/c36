@@ -1,26 +1,32 @@
 class Forme{
  constructor(){
-
+    this.entrada=createInput("name");
+    this.botao=createButton('play');
+    this.greeting=createElement('h2');
+ }
+ hide(){
+this.entrada.hide();
+this.botao.hide();
+this.greeting.hide();
  }
  display(){
  var titulo=createElement('h2');
  titulo.html("jogo");   
 titulo.position(130,0);
 
-var entrada=createInput("name");
-var botao=createButton('play');
-var greeting=createElement('h3');
-entrada.position(130,160);
-botao,position(250,200);
-botao.mousePressed(function(){
-entrada.hide();
-botao.hide();   
-var nome=entrada.value(); 
+
+this.entrada.position(130,160);
+this.botao.position(250,200);
+this.botao.mousePressed(()=>{
+this.entrada.hide();
+this.botao.hide();   
+player.nome=this.entrada.value(); 
 playerCount+=1;
-player.update(nome);
+player.index=playerCount;
+player.update();
 player.updateCount(playerCount);
-greeting.html("olá "+nome);
-greeting.position(130,160);
+this.greeting.html("olá "+player.nome);
+this.greeting.position(130,160);
 })
  }   
 }
